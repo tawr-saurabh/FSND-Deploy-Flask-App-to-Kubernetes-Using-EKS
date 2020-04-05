@@ -310,7 +310,7 @@ Resources:
       Source:
         Type: CODEPIPELINE
       Environment:
-        ComputeType: BUILD_GENERAL1_SMALL
+        ComputeType: BUILD_GENERAL1_MEDIUM
         Type: WINDOWS_CONTAINER
         Image: !Ref CodeBuildDockerImage
         EnvironmentVariables:
