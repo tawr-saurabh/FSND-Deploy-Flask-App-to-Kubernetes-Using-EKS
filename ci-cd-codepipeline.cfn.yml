@@ -48,7 +48,7 @@ Parameters:
 
   CodeBuildDockerImage:
     Type: String
-    Default: aws/codebuild/docker:17.09.0
+    Default: aws/codebuild/windows-base:2.0
     Description: Default AWS CodeBuild Docker optimized image
     MinLength: 3
     MaxLength: 100
@@ -311,7 +311,7 @@ Resources:
         Type: CODEPIPELINE
       Environment:
         ComputeType: BUILD_GENERAL1_SMALL
-        Type: LINUX_CONTAINER
+        Type: WINDOWS_CONTAINER
         Image: !Ref CodeBuildDockerImage
         EnvironmentVariables:
           - Name: REPOSITORY_URI
