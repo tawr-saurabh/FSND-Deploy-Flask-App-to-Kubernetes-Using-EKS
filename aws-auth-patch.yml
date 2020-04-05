@@ -1,0 +1,21 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::831082851875:role/UdacityFlaskDeployCBKubectlRole
+      username: build
+  mapUsers: |
+    []
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2020-04-04T17:46:25Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "10501"
+  selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
+  uid: 347823dd-769c-11ea-8ae2-0e61a6ac5d4c
