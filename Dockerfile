@@ -1,4 +1,4 @@
-FROM python:rc-windowsservercore-ltsc2016
+FROM 3.9.0a5-alpine3.10
 
 COPY . /app
 WORKDIR /app
