@@ -316,7 +316,7 @@ Resources:
         EnvironmentVariables:
           - Name: REPOSITORY_URI
             Value: !Sub ${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/${EcrDockerRepository}
-          - Name: REPOSITORY_NAME 
+          - Name: REPOSITORY_NAME
             Value: !Ref GitSourceRepo
           - Name: REPOSITORY_BRANCH
             Value: !Ref GitBranch
