@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-jwi-api
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5000
+      targetPort: 8080
+  selector:
+    app: simple-jwi-api
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-jwi-api
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
+  selector:
+    matchLabels:
+      app: simple-jwi-api
+  template:
+    metadata:
+      labels:
+        app: simple-jwi-api
+    spec:
+      containers:
+        - name: simple-jwi-api
+          image: CONTAINER_IMAGE
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: false
+            allowPrivilegeEscalation: false
+          ports:
+            - containerPort: 8080
