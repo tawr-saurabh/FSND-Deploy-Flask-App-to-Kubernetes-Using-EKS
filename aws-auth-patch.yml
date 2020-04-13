@@ -1,21 +1,19 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
-# and an empty file will abort the edit. If an error occurs while saving this file will be
-# reopened with the relevant failures.
-#
 apiVersion: v1
 data:
   mapRoles: |
     - groups:
+      - system:bootstrappers
+      - system:nodes
       - system:masters
-      rolearn: arn:aws:iam::831082851875:role/UdacityFlaskDeployCBKubectlRole
+      rolearn: arn:aws:iam::831082851875:role/eksctl-simple-jwt-api-cluster-ServiceRole-1GJEWKQTA0W9F
       username: build
   mapUsers: |
     []
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2020-04-04T17:46:25Z"
+  creationTimestamp: "2020-04-12T21:56:44Z"
   name: aws-auth
   namespace: kube-system
-  resourceVersion: "10501"
+  resourceVersion: "7567"
   selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
-  uid: 347823dd-769c-11ea-8ae2-0e61a6ac5d4c
+  uid: 7f94d42b-7d08-11ea-8ddf-0621e71a640e
