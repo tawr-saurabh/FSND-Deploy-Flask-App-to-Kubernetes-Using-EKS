@@ -1,4 +1,5 @@
-FROM python:3.7.2-slim
+FROM python:rc-windowsservercore
+#python:3.7.2-slim
 
 COPY . /app
 WORKDIR /app
